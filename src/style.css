@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fredoka:wght@300;400;500&family=Smooch+Sans:wght@500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 10px;
+}
+
+.myBackground {
+  background-color: #006d77;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.mainContainer {
+  max-height: 100vh;
+  max-width: 100vw;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin: auto;
+  place-content: center;
+}
+.mainContainer .clockContainer {
+  background-color: transparent;
+  width: 50rem;
+  height: 45rem;
+  border: none;
+  margin: auto auto auto auto;
+  display: grid;
+  grid-template-rows: repeat(2, 17%) 40% 8%;
+  place-content: center;
+  font-size: 1rem;
+}
+.mainContainer .clockContainer .clockComponent {
+  place-self: center;
+}
+.mainContainer .clockContainer .clockComponent button {
+  font-size: 3rem;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bolder;
+  align-self: start;
+}
+.mainContainer .clockContainer .clockComponent button:active {
+  transform: scale(0.99);
+  color: rgb(92, 92, 92);
+}
+.mainContainer .clockContainer .title {
+  font-size: 4rem;
+}
+.mainContainer .clockContainer .timeLengths {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-content: center;
+  justify-self: left;
+  -moz-column-gap: 9rem;
+       column-gap: 9rem;
+  font-size: 2rem;
+}
+.mainContainer .clockContainer .timeLengths .lengthComponents {
+  display: grid;
+  grid-template-rows: repeat(2, 3.5rem);
+  place-content: center;
+}
+.mainContainer .clockContainer .timeLengths .lengthComponents .elements {
+  display: grid;
+  grid-template-columns: repeat(3, 3rem);
+  place-content: center;
+}
+.mainContainer .clockContainer .timeLengths .lengthComponents .elements #break-length,
+.mainContainer .clockContainer .timeLengths .lengthComponents .elements #session-length {
+  place-self: center;
+}
+.mainContainer .clockContainer .display {
+  display: grid;
+  grid-template-rows: 20% 80%;
+  place-content: center;
+  border: 0.7rem solid #013439;
+  border-radius: 50px;
+  width: 27rem;
+  height: 17rem;
+}
+.mainContainer .clockContainer .display #timer-label {
+  font-size: 3rem;
+  margin: 0 auto 0 auto;
+}
+.mainContainer .clockContainer .display #time-left {
+  font-size: 8rem;
+}
+.mainContainer .clockContainer .displayControls {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  -moz-column-gap: 0.3rem;
+       column-gap: 0.3rem;
+}
+
+@media (min-width: 290px) and (max-width: 500px) {
+  html {
+    font-size: 8px !important;
+  }
+  .display {
+    border-radius: 40px !important;
+  }
+}
+@media (min-width: 0px) and (max-width: 289px) {
+  html {
+    font-size: 6px !important;
+  }
+  .display {
+    border-radius: 30px !important;
+  }
+}
+.changeToRed {
+  color: red;
+}/*# sourceMappingURL=style.css.map */

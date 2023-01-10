@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Fredoka:wght@300;400;500&family=Smooch+Sans:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  font-size: 10px;
+}
+
+$fredokaFont: "Fredoka", sans-serif;
+$crimsonTextFont: "Crimson Text", serif;
+$concertOneFont: "Concert One", cursive;
+$smoochSans: "Smooch Sans", sans-serif;
+$sansSerif: sans-serif;
+$wofSomething: "wticons";
+
+//My Colors
+$background-color: #006d77;
+$font-color: #fff;
+$display-borderColor: #013439;
+
+.myBackground {
+  background-color: $background-color;
+  color: $font-color;
+  font-family: sans-serif;
+}
+
+.mainContainer {
+  max-height: 100vh;
+  max-width: 100vw;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  margin: auto;
+  place-content: center;
+
+  .clockContainer {
+    background-color: transparent;
+    width: 50rem;
+    height: 45rem;
+    border: none;
+    margin: auto auto auto auto;
+    display: grid;
+    grid-template-rows: repeat(2, 17%) 40% 8%;
+    place-content: center;
+    font-size: 1rem;
+
+    .clockComponent {
+      place-self: center;
+      button {
+        font-size: 3rem;
+        background-color: transparent;
+        border: none;
+        color: $font-color;
+        font-weight: bolder;
+        align-self: start;
+      }
+      button:active {
+        transform: scale(0.99);
+        color: rgb(92, 92, 92);
+      }
+    }
+
+    .title {
+      font-size: 4rem;
+    }
+
+    .timeLengths {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      place-content: center;
+      justify-self: left;
+      column-gap: 9rem;
+      font-size: 2rem;
+
+      .lengthComponents {
+        display: grid;
+        grid-template-rows: repeat(2, 3.5rem);
+        place-content: center;
+        .elements {
+          display: grid;
+          grid-template-columns: repeat(3, 3rem);
+          place-content: center;
+          #break-length,
+          #session-length {
+            place-self: center;
+          }
+        }
+      }
+    }
+
+    .display {
+      display: grid;
+      grid-template-rows: 20% 80%;
+      place-content: center;
+      //  padding: 4rem;
+      border: 0.7rem solid $display-borderColor;
+      border-radius: 50px;
+      width: 27rem;
+      height: 17rem;
+
+      #timer-label {
+        font-size: 3rem;
+        margin: 0 auto 0 auto;
+      }
+      #time-left {
+        font-size: 8rem;
+      }
+    }
+
+    .displayControls {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 0.3rem;
+    }
+  }
+}
+@media (min-width: 290px) and (max-width: 500px) {
+  html {
+    font-size: 8px !important;
+  }
+
+  .display {
+    border-radius: 40px !important;
+  }
+}
+
+@media (min-width: 0px) and (max-width: 289px) {
+  html {
+    font-size: 6px !important;
+  }
+
+  .display {
+    border-radius: 30px !important;
+  }
+}
+
+.changeToRed {
+  color: red;
+}
